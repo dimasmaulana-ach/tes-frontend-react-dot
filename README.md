@@ -1,54 +1,79 @@
-# React + TypeScript + Vite
+# DOT Technical Test Task Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend: React.js, React Router, Zustand, Tailwind CSS, Tanstack React Query
 
-## Expanding the ESLint configuration
+Backend: Nest JS > (https://github.com/dimasmaulana-ach/api-technical-test-dot)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Database: Neon Postgres
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+State Management: (Zustand)
+
+### 📂 Project Structure
+```
+📂 src
+ ┣ 📂 components      # Component reusable
+ ┣ 📂 features        # Direktori utama (modular)
+ ┣ 📂 hooks           # Custom hooks
+ ┣ 📂 layouts         # Component Layouts
+ ┣ 📂 router          # Routing App
+ ┣ 📂 utils           # Helper functions
+ ┣ 📜 main.tsx        # Entry point aplikasi
+ ┗ 📜 App.tsx         # Root Component
+```
+### 🔧 Installation & Setup
+
+#### Clone repository:
+
+```
+git clone https://github.com/dimasmaulana-ach/tes-frontend-react-dot.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Masuk ke direktori proyek:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
+cd tes-frontend-react-dot
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+#### Install dependencies:
+```
+npm install
+```
+atau
+```
+pnpm install
+```
+
+#### Jalankan aplikasi:
+```
+npm run dev
+```
+atau
+```
+pnpm dev
+```
+Akses aplikasi di http://localhost:5173
+Atau aplikasi di server https://taskmanagement-dot.dimasmaulana.com/ 
+
+⚙️ Environment Variables
+
+Buat file .env di root proyek dan tambahkan variabel yang dibutuhkan:
+```
+VITE_API_URL=https://api-technical-test-dot-production.up.railway.app/api/
+```
+
+🚀 Deployment
+
+Build aplikasi:
+
+```
+npm run build
+```
+
+Deploy ke hosting (Vercel):
+
+```
+vercel deploy
 ```
